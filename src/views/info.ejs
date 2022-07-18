@@ -1,0 +1,62 @@
+<%-include('./partials/header')%>  <!--incluir header-->
+    <body>   
+    <%-include('./partials/navLogin')%>  <!--incluir navLogin-->
+    <div class="container mt-3">
+        <button class="btn btn-secondary"id="btnInfo">
+            <div class="btn-info-home mt-1">
+                <span class="material-symbols-outlined">
+                    home
+                </span>
+                <span class="btn-text">Inicio</span>
+                
+            </div>
+        </button>
+    </div>
+    <section class="container text-center mt-2">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h2 class="mt-4 title-info">Información General</h2>
+                <ul class="list-group mt-5">
+                    <li class="list-group-item">
+                        <h5 class="mt-1">Argumentos de Entrada</h5>
+                        <p class="pt-2"><%=arguments%></p>
+                    </li>
+                    <li class="list-group-item">
+                        <h5 class="mt-1">Plataforma</h5>
+                        <p class="pt-2"><%=system%></p> 
+                    </li>
+                    <li class="list-group-item">
+                        <h5 class="mt-1">Versión de NodeJS</h5>
+                        <p class="pt-2"><%=version%></p> 
+                    </li>
+                    <li class="list-group-item">
+                        <h5 class="mt-1">Memoria Total Reservada</h5>
+                        <p class="pt-2"><%=memory%></p> 
+                    </li>
+                    <li class="list-group-item">
+                        <h5 class="mt-1">Path de Ejecución</h5>
+                        <p class="pt-2"><%=path%></p> 
+                    </li>
+                    <li class="list-group-item">
+                        <h5 class="mt-1">Process ID</h5>
+                        <p class="pt-2"><%=id%></p> 
+                    </li>
+                    <li class="list-group-item">
+                        <h5 class="mt-1">Carpeta del Proyeto</h5>
+                        <p class="pt-2"><%=folder%></p> 
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <script>
+        const btn =document.querySelector('#btnLogout');
+        btn.addEventListener('click',()=>{
+            location.href='/logout'
+        })
+        document.querySelector('#btnInfo').addEventListener('click',()=>{
+            location.href='/'
+        })
+    </script>
+</body>
+</html>

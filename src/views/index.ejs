@@ -1,0 +1,37 @@
+<%- include('./partials/header')%>
+    <!--incluir encabezado-->
+
+    <body>
+        <%-include('./partials/navLogin')%>  <!--incluir navLogin-->
+        <div class="container mt-3 d-flex align-items-center">
+            <div class="btn-info-container">
+                <button class="btn btn-secondary"id="btnGotoInfo">
+                    <div class="btn-info-home mt-1">
+                        <span class="material-symbols-outlined">
+                            feed
+                        </span>
+                        <span class="btn-text">Info</span>      
+                    </div>
+                </button>
+            </div>
+            <form action="/api/randoms"target="_blank">
+                <h6 class="mb-3 ms-5">Generar Numeros aleatorios</h6>
+                <div class="d-flex align-items-center">
+                    <label class="form-label me-2">Cantidad</label>
+                    <input type="number"class="form-control form-input-random"name="quantity">
+                    <button class="btn btn-primary ms-2">Generar</button>
+                </div>
+            </form>
+        </div>
+        <div class="container text-center">
+            <%-include('./partials/products.ejs') %> <!--Mostrar la lista de productos con products.ejs-->
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <%- include('./partials/formProduct')%><!--incluir formulario ingreso de productos -->
+                </div>
+            </div>
+        </div>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="../../public/js/main.js"></script>
+    </body>
+    </html>
