@@ -13,12 +13,14 @@
     const socket = io();
     socket.on("resultData", async (data, port) => {
         setTimeout(()=>{
-            await fetch(`https://proyectoback2022.herokuapp.com/:${port}/logout`,{
-                credentials:'include',
-                method:'post'
-            })
-            .then(()=>location.href='/login')
-            .catch(()=>console.log('Error al redireccionar'))
+            try {
+                await fetch(`https://proyectoback2022.herokuapp.com/:${port}/logout`,{
+                    credentials:'include',
+                    method:'post'
+                })
+            } catch (error) {
+                console.log('Error al redireccionar',error)
+            }
         },2000);
     })
     </script>
