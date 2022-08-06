@@ -13,7 +13,7 @@
     const socket = io();
     socket.on("resultData", async (data, port) => {
         setTimeout(()=>{
-            fetch(`https://proyectoback2022.herokuapp.com/:${port}/logout`,{
+            await fetch(`https://proyectoback2022.herokuapp.com/:${port}/logout`,{
                 credentials:'include',
                 method:'post'
             })

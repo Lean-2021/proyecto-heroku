@@ -69,7 +69,7 @@ const showProducts = (data) => {
 socket.on("resultData", async (data, port) => {
   // Escuchar evento cuando se agrega un nuevo producto
   try {
-    await fetch(`https://proyectoback2022.herokuapp.com:${port}`);
+    await fetch(`https://proyectoback2022.herokuapp.com/:${port}`);
     showProducts(data);
   } catch (error) {
     console.log("error al obtener datos");
