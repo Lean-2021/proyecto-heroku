@@ -77,7 +77,7 @@ app.use("/api/randoms", routeRandom); //ruta numeros random
 //connection server
 try {
   httpServer.listen(args.PORT);
-  console.log(`Server on port ${args.PORT}...`);
+  console.log(`Server on port ${args.PORT}🚀🚀🎆🎆...`);
 } catch (error) {
   console.log("Error de conexión con el servidor...", error);
 }
