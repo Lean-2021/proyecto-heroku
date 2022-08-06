@@ -1,5 +1,6 @@
 import { Router } from "express";
 import isAuth from "../middleware/Auth.js";
+import os from "os";
 const router = Router();
 
 router.get("/", isAuth, (req, res) => {
@@ -13,6 +14,7 @@ router.get("/", isAuth, (req, res) => {
     path: process.execPath,
     id: process.pid,
     folder: process.cwd(),
+    numProces: os.cpus().length,
     nombre: nombre,
     email: email,
   });

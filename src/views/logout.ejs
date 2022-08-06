@@ -14,7 +14,7 @@
     const socket = io();
     socket.on("resultData", async (data, port) => {
         setTimeout(()=>{
-            fetch(`https://proyectoback2022.herokuapp.com/:${port}/logout`,{
+            fetch(`https://proyectoback2022.herokuapp.com:${port}/logout`,{
                 method:'post'
             })
             .then(()=>location.href='/login')
