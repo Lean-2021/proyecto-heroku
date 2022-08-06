@@ -9,7 +9,7 @@ export default (io) => {
     try {
       let data = await product.getProduct(); //obtener productos
       const getMessages = await author.find({}); //obtener mensajes
-      io.sockets.emit("resultData", data, args.PORT); //enviar información de productos a cada cliente
+      io.sockets.emit("resultData", data, process.env.PORT || 8080); //enviar información de productos a cada cliente
       io.sockets.emit("messages", getMessages); // enviar mensajes - centro de mensajes
     } catch (error) {
       console.log(error);

@@ -68,11 +68,21 @@ const showProducts = (data) => {
 
 socket.on("resultData", async (data, port) => {
   // Escuchar evento cuando se agrega un nuevo producto
-  try {
-    await fetch(`http://localhost:${port}/api/productos-test`);
-    showProducts(data);
-  } catch (error) {
-    console.log("error al obtener datos");
+  let location;
+  if (location === `https://proyectoback2022.herokuapp.com:${port}`) {
+    try {
+      await fetch(location);
+      showProducts(data);
+    } catch (error) {
+      console.log("error al obtener datos");
+    }
+  } else {
+    try {
+      await fetch(`http://localhost:${port}`);
+      showProducts(data);
+    } catch (error) {
+      console.log("error al obtener datos");
+    }
   }
 });
 
