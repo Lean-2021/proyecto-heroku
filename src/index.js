@@ -26,7 +26,7 @@ dotenv.config();
 const app = express();
 const httpServer = http.createServer(app);
 const io = new Server(httpServer); //implementación de websocket
-export const args = newYargs.alias({ p: "PORT" }).default({ PORT: 8080 }).argv; //puerto por defecto 8080 sino se pasa por parametro otro puerto. EJ: node src/index.js -p 4000
+const PORT = process.env.PORT || 8080;
 
 const advanceOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 
@@ -76,8 +76,8 @@ app.use("/api/randoms", routeRandom); //ruta numeros random
 
 //connection server
 try {
-  httpServer.listen(args.PORT);
-  console.log(`Server on port ${args.PORT}🚀🚀🎆🎆...`);
+  httpServer.listen(PORT);
+  console.log(`Server on port ${PORT}🚀🚀🎆🎆...`);
 } catch (error) {
   console.log("Error de conexión con el servidor...", error);
 }

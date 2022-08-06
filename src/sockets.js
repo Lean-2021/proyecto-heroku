@@ -1,6 +1,5 @@
 import { Products } from "./daos/apiProducts.js";
 import author from "./DB/models/author.js";
-import { args } from "./index.js";
 const product = new Products();
 
 export default (io) => {

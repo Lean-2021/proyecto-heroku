@@ -1,5 +1,4 @@
 import { Router } from "express";
-import { args } from "../index.js";
 
 const router = Router();
 
@@ -9,7 +8,7 @@ router.get("/", (req, res) => {
     res.render("logout", {
       title: "Infoweb - Logout",
       nombre: req.session.nombre,
-      data: args.PORT,
+      data: process.env.PORT,
     });
   } else {
     res.redirect("/login");
