@@ -7,16 +7,13 @@
             </div>
         </div>
     </div>
-    
-    <script src="/socket.io/socket.io.js"></script> 
     <script>   // redireccionar a pagina de login luego de mostrar mensaje de Hasta Luego
         
         setTimeout(()=>{
             try {
                 await fetch(`https://proyectoback2022.herokuapp.com/logout`,{
-                    method:'POST'
+                    method:'post'
                 })
-                location.href='/';
             } catch (error) {
                 console.log('Error al redireccionar',error)
             }

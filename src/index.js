@@ -51,7 +51,7 @@ app.use(
     store: MongoStore.create({
       mongoUrl: `${process.env.URI_SESSION}`,
       mongoOptions: advanceOptions,
-      ttl: 600
+      // ttl: 600
     }),
     cookie: {
       httpOnly: false,
