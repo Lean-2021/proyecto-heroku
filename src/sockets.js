@@ -1,7 +1,6 @@
 import { Products } from "./daos/apiProducts.js";
 import author from "./DB/models/author.js";
 const product = new Products();
-const PORT = process.env.PORT || 8080;
 
 export default (io) => {
   io.on("connection", async (socket) => {
@@ -10,7 +9,7 @@ export default (io) => {
     try {
       let data = await product.getProduct(); //obtener productos
       const getMessages = await author.find({}); //obtener mensajes
-      io.sockets.emit("resultData", data,PORT ); //enviar información de productos a cada cliente
+      io.sockets.emit("resultData", data); //enviar información de productos a cada cliente
       io.sockets.emit("messages", getMessages); // enviar mensajes - centro de mensajes
     } catch (error) {
       console.log(error);

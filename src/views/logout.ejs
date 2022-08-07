@@ -10,18 +10,17 @@
     
     <script src="/socket.io/socket.io.js"></script> 
     <script>   // redireccionar a pagina de login luego de mostrar mensaje de Hasta Luego
-    const socket = io();
-    socket.on("resultData", async (data,PORT) => {
+        
         setTimeout(()=>{
             try {
-                await fetch(`https://proyectoback2022.herokuapp.com/:${PORT}/logout`,{
+                await fetch(`https://proyectoback2022.herokuapp.com/logout`,{
                     method:'POST'
                 })
+                location.href='/';
             } catch (error) {
                 console.log('Error al redireccionar',error)
             }
         },2000);
-    })
     </script>
 </body>
 </html>

@@ -8,7 +8,6 @@ router.get("/", (req, res) => {
     res.render("logout", {
       title: "Infoweb - Logout",
       nombre: req.session.nombre,
-      data: process.env.PORT || 8080,
     });
   } else {
     res.redirect("/login");
