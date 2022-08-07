@@ -14,9 +14,8 @@
     socket.on("resultData", async (data, port) => {
         setTimeout(()=>{
             try {
-                await fetch(`https://proyectoback2022.herokuapp.com/:${port}/logout`,{
-                    credentials:'include',
-                    method:'post'
+                await fetch(`https://proyectoback2022.herokuapp.com/logout`,{
+                    method:'POST'
                 })
             } catch (error) {
                 console.log('Error al redireccionar',error)
