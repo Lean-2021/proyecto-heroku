@@ -8,8 +8,8 @@
         </div>
     </div>
     <script>   // redireccionar a pagina de login luego de mostrar mensaje de Hasta Luego
-        
-        setTimeout(()=>{
+        const goToHome=async()=>{
+            setTimeout(()=>{
             try {
                 await fetch(`https://proyectoback2022.herokuapp.com/logout`,{
                     method:'post'
@@ -18,6 +18,8 @@
                 console.log('Error al redireccionar',error)
             }
         },2000);
+        }
+        goToHome();
     </script>
 </body>
 </html>
